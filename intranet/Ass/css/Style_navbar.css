@@ -1,0 +1,696 @@
+body {
+    padding-top: 60px;
+    background-image: url(../img/fondo.webp);
+    /* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+    background-position: center center;
+    /* Para que la imagen de fondo no se repita */
+    background-repeat: no-repeat;
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    background-attachment: fixed;
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    background-size: cover;
+    /* Se muestra un color de fondo mientras se está cargando la imagen
+de fondo o si hay problemas para cargarla */
+    background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: rgb(47, 44, 125);
+}
+
+.navbar {
+    background-color: #f9fcfe;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    height: 80px;
+}
+
+.nav-link,
+dropdown {
+    color: rgb(47, 44, 125);
+}
+
+.nav-link:hover {
+    color: rgb(115, 141, 199);
+}
+
+.logo-brand {
+    width: 150px;
+}
+
+.navbar-toggler {
+    font-size: 40px;
+}
+
+.navbar-toggler:focus {
+    outline: rgb(47, 44, 125);
+}
+
+.dropdown-item {
+    color: rgb(47, 44, 125);
+}
+
+.dropdown-item:hover {
+    color: rgb(115, 141, 199);
+}
+
+img {
+    border-radius: 50%;
+}
+
+.espacio_top {
+    height: 50px;
+}
+
+.table {
+    margin: auto;
+}
+
+.fondo_pag {
+    margin: auto;
+    width: 1150px;
+    height: 600px;
+}
+
+.fondo_img {
+    background-image: url(../img/fondo_3.webp);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto 580px;
+}
+
+.fondo_img2 {
+    background-image: url(../img/fondo_3.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 580px;
+}
+
+
+/*------------------------------------*\
+	SCROLL_2
+\*------------------------------------*/
+
+.scroll_2 {
+    margin: auto;
+    height: 300px;
+    width: 800px;
+    align-content: center;
+    overflow-x: hidden;
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+    border: 1px solid;
+}
+
+
+/*------------------------------------*\
+	Tamaño Tables
+\*------------------------------------*/
+
+.page-body {
+    margin: auto;
+    height: 360px;
+    width: 900px;
+    align-content: center;
+    overflow-x: hidden;
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+    border: 0px solid;
+}
+
+
+/*------------------------------------*\
+	Iconos Singing
+\*------------------------------------*/
+
+input#inputEmail {
+    background-image: url(../img/Login/icono_login.webp);
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+input#inputPassword {
+    background-image: url(../img/Login/icono_login2.webp);
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+
+/*------------------------------------*\
+	Form Control and Group
+\*------------------------------------*/
+
+.form-group {
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.form-control,
+.form-control::selection,
+.form-control:checked {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: rgb(115, 141, 199);
+}
+
+select,
+select option,
+select::selection,
+select:hover,
+select:active,
+option:focus,
+select.active,
+select:checked,
+select:not(:checked) {
+    color: rgb(115, 141, 199);
+    background-color: white;
+}
+
+.form-control1 {
+    width: 250px;
+}
+
+.form-control2 {
+    width: 300px;
+}
+
+.form-control3 {
+    width: 400px;
+}
+
+.form-control4 {
+    width: 430px;
+}
+
+.form-control5 {
+    width: 450px;
+}
+
+
+/*------------------------------------*\
+	Buttons ROVOFIC
+\*------------------------------------*/
+
+.col_btn {
+    color: white;
+}
+
+button {
+    color: white;
+}
+
+.btn_rvf {
+    width: 110px;
+    color: white;
+    background-color: rgb(47, 44, 125);
+    border-color: rgb(115, 141, 199);
+    border-radius: 15px;
+}
+
+.btn_rvf:hover,
+.btn_rvf:active,
+.btn_rvf:focus,
+.btn_rvf.active {
+    background: rgb(115, 141, 199);
+    color: white;
+    border-color: rgb(47, 44, 125);
+}
+
+.btn_rvf1 {
+    width: 200px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(47, 44, 125);
+    border-color: rgb(115, 141, 199);
+    border-radius: 15px;
+}
+
+.btn_rvf1:hover,
+.btn_rvf1:active,
+.btn_rvf1:focus,
+.btn_rvf1.active {
+    background: rgb(115, 141, 199);
+    color: white;
+    border-color: rgb(47, 44, 125);
+}
+
+.btn_rvf2 {
+    width: 200px;
+    font-size: 20px;
+    color: white;
+    background-color: #666666;
+    border-color: rgb(115, 141, 199);
+    border-radius: 15px;
+}
+
+.btn_rvf2:hover,
+.btn_rvf2:active,
+.btn_rvf2:focus,
+.btn_rvf2.active {
+    background: rgb(115, 141, 199);
+    color: white;
+    border-color: rgb(47, 44, 125);
+}
+
+input[type=submit] {
+    width: 200px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(47, 44, 125);
+    border-color: rgb(115, 141, 199);
+    border-radius: 15px;
+}
+
+
+/*------------------------------------*\
+	Buttons ROVOFIC
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+	Size Screem
+\*------------------------------------*/
+
+
+/*/ Extra small devices (portrait phones, less than 576px) /*/
+
+@media (max-width: 575.98px) {}
+
+
+/*/ Extra small devices (portrait 
+phones, less than 576px)
+// Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+
+/*/ Small devices (landscape phones, 
+less than 768px) 
+// Medium devices (tablets, 768px and up) /*/
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    h2 {
+        padding-top: 30px;
+        padding-bottom: 10px;
+        font-size: 60px;
+    }
+    h3 {
+        font-size: 50px;
+    }
+    h4 {
+        font-size: 45px;
+    }
+    h5 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 38px;
+    }
+    label {
+        font-size: 36px;
+    }
+    option {
+        font-size: 32px;
+    }
+    small {
+        font-size: 28px;
+    }
+    th {
+        font-size: 30px;
+    }
+    td {
+        font-size: 30px;
+    }
+    .form-control,
+    a,
+    input {
+        font-size: 32px;
+    }
+    .navbar {
+        height: 120px;
+    }
+    .logo-brand {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 240px;
+    }
+    .profile_h {
+        width: 80px;
+        height: 80px;
+    }
+    .espacio_top {
+        height: 60px;
+    }
+    .btn {
+        font-size: 42px;
+    }
+    .btn_rvf,
+    .btn_rvf1,
+    .btn_rvf2,
+    input[type=submit] {
+        width: 160px;
+        font-size: 34px;
+    }
+    .carucel_h {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 30px;
+        width: 550px;
+        height: 550px;
+    }
+    .Icons_h {
+        height: 75px;
+    }
+    .Icons_hh {
+        height: 100px;
+    }
+    input#chekTerm2,
+    input#chekTerm {
+        width: 30px;
+        height: 30px;
+    }
+    .fondo_img {
+        background-image: url(../img/fondo_5.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 950px auto;
+    }
+    .home2 {
+        margin: auto;
+        height: 900px;
+        width: 700px;
+        align-content: center;
+        overflow-x: visible;
+        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        scrollbar-width: thin;
+        border: 0px solid;
+    }
+    .fondo_pag {
+        margin: auto;
+        padding-top: 20px;
+        width: 900px;
+        height: 1550px;
+    }
+    .page-body {
+        margin: auto;
+        height: 1250px;
+        width: 750px;
+        align-content: center;
+        overflow-x: visible;
+        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        scrollbar-width: thin;
+        border: 0px solid;
+    }
+    body {
+        padding-top: 50px;
+        background-image: url(../img/fondo2.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: white;
+    }
+    .scroll_2 {
+        margin: auto;
+        height: 400px;
+        width: 625px;
+        align-content: center;
+        overflow-x: hidden;
+        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        scrollbar-width: thin;
+        border: 1px solid;
+    }
+}
+
+
+/* Medium devices (tablets, less 
+than 992px) 
+// Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    h2 {
+        padding-top: 0px;
+        padding-bottom: 1px;
+        font-size: 34px;
+    }
+    h3 {
+        font-size: 28px;
+    }
+    h4 {
+        font-size: 24px;
+    }
+    h5 {
+        font-size: 22px;
+    }
+    p {
+        font-size: 22px;
+    }
+    label {
+        font-size: 20px;
+    }
+    option {
+        font-size: 18px;
+    }
+    small {
+        font-size: 14px;
+    }
+    th {
+        font-size: 18px;
+    }
+    td {
+        text-align: justify;
+        font-size: 18px;
+    }
+    .form-control,
+    input,
+    a {
+        font-size: 20px;
+    }
+    .navbar {
+        height: 80px;
+    }
+    .logo-brand {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 180px;
+    }
+    .espacio_top {
+        height: 40px;
+    }
+    .carucel_h {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0px;
+        width: 225px;
+        height: 225px;
+    }
+    .Icons_h {
+        height: 35px;
+    }
+    .Icons_hh {
+        height: 50px;
+    }
+    .profile_h {
+        width: 55px;
+        height: 55px;
+    }
+    .btn_rvf,
+    .btn_rvf1,
+    .btn_rvf2,
+    input[type=submit] {
+        width: 115px;
+        font-size: 22px;
+    }
+    .fondo_pag {
+        margin: auto;
+        width: 900px;
+        height: 450px;
+    }
+    .fondo_img {
+        background-image: url(../img/fondo_1.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 450px;
+    }
+    .table {
+        margin: auto;
+        font-size: 16px;
+    }
+    .page-body {
+        margin: auto;
+        height: 270px;
+        width: 760px;
+        align-content: center;
+        overflow-x: visible;
+        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        scrollbar-width: thin;
+        border: 0px solid;
+    }
+    .scroll_2 {
+        font-size: 10px;
+        margin: auto;
+        height: 300px;
+        width: 660px;
+        align-content: center;
+        overflow-x: hidden;
+        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        scrollbar-width: thin;
+        border: 1px solid;
+    }
+    body {
+        padding-top: 60px;
+        background-image: url(../img/fondo2.webp);
+        /* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+        background-position: center center;
+        /* Para que la imagen de fondo no se repita */
+        background-repeat: no-repeat;
+        /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+        background-attachment: fixed;
+        /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+        background-size: cover;
+        /* Se muestra un color de fondo mientras se está cargando la imagen
+    de fondo o si hay problemas para cargarla */
+        background-color: white;
+    }
+}
+
+
+/* Large devices (desktops, less 
+than 1200px) 
+Aplica 1200x800
+1000x700
+900x600
+700x500
+500x500
+*/
+
+@media (max-width: 1200px) {
+    h2 {
+        padding-top: 5px;
+        padding-bottom: 1px;
+        font-size: 38px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    h4 {
+        font-size: 26px;
+    }
+    h5 {
+        font-size: 24px;
+    }
+    p,
+    label {
+        font-size: 24px;
+    }
+    option {
+        font-size: 20px;
+    }
+    small {
+        font-size: 16px;
+    }
+    th {
+        font-size: 20px;
+    }
+    td {
+        font-size: 20px;
+    }
+    .form-control,
+    input,
+    a {
+        font-size: 22px;
+    }
+    .navbar {
+        height: 80px;
+    }
+    .logo-brand {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 180px;
+    }
+    .carucel_h {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0px;
+        width: 300px;
+        height: 300px;
+    }
+    .Icons_h {
+        height: 35px;
+    }
+    .Icons_hh {
+        height: 50px;
+    }
+    .profile_h {
+        width: 55px;
+        height: 55px;
+    }
+    .espacio_top {
+        height: 10px;
+    }
+    .btn_rvf,
+    .btn_rvf1,
+    .btn_rvf2,
+    input[type=submit] {
+        width: 125px;
+        font-size: 22px;
+    }
+    .fondo_pag {
+        margin: auto;
+        width: 1100px;
+        height: 550px;
+    }
+    .fondo_img {
+        background-image: url(../img/fondo_1.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 530px;
+    }
+    .table {
+        margin: auto;
+        font-size: 20px;
+    }
+    .page-body {
+        margin: auto;
+        height: 340px;
+        width: 900px;
+        align-content: center;
+        overflow-x: hidden;
+        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        scrollbar-width: thin;
+        border: 0px solid;
+    }
+    body {
+        padding-top: 60px;
+        background-image: url(../img/fondo1.webp);
+        /* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+        background-position: center center;
+        /* Para que la imagen de fondo no se repita */
+        background-repeat: no-repeat;
+        /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+        background-attachment: fixed;
+        /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+        background-size: cover;
+        /* Se muestra un color de fondo mientras se está cargando la imagen
+    de fondo o si hay problemas para cargarla */
+        background-color: white;
+    }
+}

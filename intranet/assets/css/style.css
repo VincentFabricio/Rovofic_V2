@@ -1,0 +1,266 @@
+.wrapper {
+    margin: 0 auto;
+    width: 650px;
+}
+
+.page-header h2 {
+    margin-top: 0;
+}
+
+.page-body {
+    width: 100%;
+    overflow: auto;
+}
+
+table tr td:last-child a {
+    margin-right: 15px;
+}
+
+th {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center
+}
+
+h1,
+h2 {
+    color: rgb(47, 44, 125);
+}
+
+.main {
+    margin: auto;
+    border: 1px solid #7C7A7A;
+    width: 80%;
+    text-align: left;
+    padding: 30px;
+    background: red;
+    opacity: 0.8;
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+
+input[type=submit] {
+    background: #6ca16e;
+    width: 100%;
+    padding: 5px 15px;
+    background: #ccc;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+table td {
+    padding: 5px;
+}
+
+div.opciones {
+    width: 105%;
+}
+
+div.center {
+    text-align: center;
+}
+
+.imagens {
+    border-radius: 150px
+}
+
+.imagenes {
+    border-radius: 15px
+}
+
+.trselected {
+    background: lightgrey;
+}
+
+.trselected_2 {
+    background: lightgrey;
+}
+
+#login {
+    background-image: url(../img/Login_fondo_2.webp);
+    /* Para dejar la imagen de fondo centrada, vertical y horizontalmente */
+    background-position: center center;
+    /* Para que la imagen de fondo no se repita */
+    background-repeat: no-repeat;
+}
+
+
+/* Pading fondo login*/
+
+
+/* Width ancho texto login*/
+
+.form-login {
+    padding: 2px;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.login_space {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.input-group-addon {
+    background-color: rgb(115, 141, 199);
+    color: white;
+}
+
+.btn_login {
+    /*width: 100%;*/
+    padding: 5px 130px;
+    border-radius: 20px;
+    background-color: rgb(47, 44, 125);
+    color: white;
+}
+
+
+/* Width ancho texto login
+input[type=email]
+{
+  color: black;
+  border-radius: 5px;
+  background-color: rgb(115,141,199);
+  
+}
+
+input::placeholder
+{
+  color: black;
+}*/
+
+.jumbotron {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 40px 15px;
+}
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+
+/* The popup form - hidden by default */
+
+.form-popup {
+    display: none;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 15;
+}
+
+
+/* Set a style for the submit/login button */
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.scroll_2 {
+    height: 300px;
+    width: 470px;
+    align-content: center;
+    overflow-x: hidden;
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+    border: 1px solid;
+}
+
+
+/* Estilo Procesos - admin*/
+
+.wrapper_procesos {
+    margin: 0 auto;
+    width: 750px;
+}
+
+
+/* Estilo Usuarios - admin*/
+
+.wrapper_Users {
+    margin: 0 auto;
+    width: 700px;
+}
+
+button.cursos {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.cursos.active,
+button.cursos:hover {
+    background-color: #ddd;
+}
+
+button.cursos:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.cursos.active:after {
+    content: "\2796";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px;
+}

@@ -1,0 +1,686 @@
+body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	color:  rgb(47, 44, 125);
+}
+p, ul, li {
+	color: rgb(115, 141, 199);
+}
+
+.navbar{
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  min-height: 100px;
+}
+.nav-link{
+	font-size: 18px;
+  color:  rgb(47, 44, 125);
+}
+.nav-link:hover{
+  color: rgb(115, 141, 199);
+}
+
+.logo-brand{
+  width: 160px;
+}
+
+.navbar-toggler{
+  font-size: 40px;
+}
+.navbar-toggler:focus{
+  outline:  rgb(47, 44, 125);
+}
+
+
+#carusel{
+  padding-top: 300px;
+}
+/*------------------------------------*\
+	BOTONES
+\*------------------------------------*/
+.btn_rvf {
+    width: 110px;
+    color: white;
+    background-color: rgb(47, 44, 125);
+    border-color: rgb(115, 141, 199);
+    border-radius: 15px;
+}
+
+.btn_rvf:hover,
+.btn_rvf:active,
+.btn_rvf:focus,
+.btn_rvf.active {
+    background: rgb(115, 141, 199);
+    color: white;
+    border-color: rgb(47, 44, 125);
+}
+
+.btn_rvf1 {
+    width: 200px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(47, 44, 125);
+    border-color: rgb(115, 141, 199);
+    border-radius: 15px;
+}
+
+.btn_rvf1:hover,
+.btn_rvf1:active,
+.btn_rvf1:focus,
+.btn_rvf1.active {
+    background: rgb(115, 141, 199);
+    color: white;
+    border-color: rgb(47, 44, 125);
+}
+
+.btn_rvf2 {
+    width: 200px;
+    font-size: 20px;
+    color: white;
+    background-color: #666666;
+    border-color: rgb(115, 141, 199);
+    border-radius: 15px;
+}
+
+.btn_rvf2:hover,
+.btn_rvf2:active,
+.btn_rvf2:focus,
+.btn_rvf2.active {
+    background: rgb(115, 141, 199);
+    color: white;
+    border-color: rgb(47, 44, 125);
+}
+/*------------------------------------*\
+	ESPACIOS ICONOS IZQ
+\*------------------------------------*/
+
+.esp_objetivo{
+	margin-top: 15px;
+	margin-bottom: 87px;
+}
+.esp_hacemos{
+	margin-top: 20px;
+	margin-bottom: 35px;
+}
+.esp_aprendes{
+	margin-top: 60px;
+	margin-bottom: 35px;
+}
+
+/*------------------------------------*\
+	PORTAFOLIO TEXXTOS
+\*------------------------------------*/
+.portfolio-caption-heading{
+	color: rgb(47, 44, 125);
+}
+.portfolio-caption-subheading{
+	color: rgb(115, 141, 199);
+}
+/*------------------------------------*\
+	About & Why Us (Feature)
+\*------------------------------------*/
+/* -- Feature -- */
+.feature {
+	position:relative;
+}
+
+.feature + .feature  {
+	margin-top:40px;
+}
+
+.feature .feature-icon {
+	position:absolute;
+	left:0;
+	top:0;
+	width:80px;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	border-radius: 50%;
+	font-size:30px;
+	border:1px solid #EBEBEB;
+	color:#2F2C7D;
+}
+
+.feature-content {
+	padding-left:100px;
+}
+
+/* -- About Img -- */
+.about-img {
+	margin-top:40px;
+}
+
+.about-img > img {
+	width:90%;
+}
+
+/* -- About Video -- */
+.about-video {
+	position: relative;
+	display: block;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.about-video > img {
+	width:100%;
+}
+
+.about-video .play-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50% , -50%);
+	    -ms-transform: translate(-50% , -50%);
+	        transform: translate(-50% , -50%);
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	background: #fff;
+	border-radius: 50%;
+	font-size: 24.027px;
+	z-index:10;
+	-webkit-animation : 2s play-animation infinite;
+	        animation : 2s play-animation infinite;
+	-webkit-transition:0.2s color;
+	transition:0.2s color;
+}
+
+.about-video:hover .play-icon {
+	color:#2F2C7D;
+}
+
+@-webkit-keyframes play-animation {
+	from {
+		-webkit-box-shadow : 0px 0px 0px 0px #FFF;
+		        box-shadow : 0px 0px 0px 0px #FFF;
+	}
+	to {
+		-webkit-box-shadow : 0px 0px 0px 10px transparent;
+		        box-shadow : 0px 0px 0px 10px transparent;
+	}
+}
+
+@keyframes play-animation {
+	from {
+		-webkit-box-shadow : 0px 0px 0px 0px #FFF;
+		        box-shadow : 0px 0px 0px 0px #FFF;
+	}
+	to {
+		-webkit-box-shadow : 0px 0px 0px 10px transparent;
+		        box-shadow : 0px 0px 0px 10px transparent;
+	}
+}
+
+.about-video:after {
+	content:"";
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	background-color:#2F2C7D;
+	opacity:0.7;
+}
+
+/*------------------------------------*\
+	POP UP
+\*------------------------------------*/
+.container-all{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+}
+
+
+.container-all:target{
+    background: rgba(0,0,0,0.8);
+    visibility: visible;
+    opacity: 1;
+}
+
+.container-all:target .popup{
+    top: 50%;
+    left: 50%;
+    transform: rotate(0deg) translate(-50%, -50%);
+    visibility: visible;
+}
+
+
+.popup{
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    background: white;
+    visibility: hidden;
+    top: -80%;
+    left: -80%;
+    transform: rotate(90deg) translate(-150%, 230%);
+    transition: all 600ms;
+}
+
+
+.img{
+    width: 40%;
+    background-image: url(../img/Kids/Kids0.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.container-text{
+    width: 60%;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+
+.container-text h1{
+    font-size: 30px;
+}
+
+.container-text p{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+.btn-close-popup{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    padding: 20px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    line-height: 10px;
+}
+
+/*------------------------------------*\
+	SCREEMS
+\*------------------------------------*/
+
+/*/ Extra small devices (portrait phones, less than 576px) /*/
+@media (max-width: 575.98px) {
+	.logo-brand{
+		width: 120px;
+	  }
+	  .navbar{
+		min-height: 80px;
+	  } 
+	.espacio_top{
+		height: 80px;
+	}
+	h1,h2,h3,h4{
+		color:  rgb(47, 44, 125);
+		font-size: medium;
+	}
+	.p{
+		font-size: small;
+	}
+
+	  
+	.esp_objetivo{
+		margin-top: 0px;
+		margin-bottom: 100px;
+	}
+	.esp_hacemos{
+		margin-top: 20px;
+		margin-bottom: 35px;
+	}
+	.esp_aprendes{
+		margin-top: 60px;
+		margin-bottom: 35px;
+	}
+
+
+	.carrusel_galery{
+		width: 90%;
+		
+	}
+	.carrusel_logos{
+		width: 40%;
+		
+	}
+	iframe{
+		width: 350px;
+		height: 1400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.size_curs{
+		background-color: #ececec;
+		width: auto;
+		height: 2150px;
+		border-radius: 50px;
+	}
+
+	.fond_pricing{
+		background-image: url(../img/Fondos/fondo1.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 2500px;
+	}
+
+	.fond_curs{
+		background-image: url(../img/Fondos/fondo2.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 3000px;
+	}
+	
+}
+/*/ Extra small devices (portrait 
+phones, less than 576px)
+// Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.logo-brand{
+		width: 120px;
+	  }
+	  .navbar{
+		min-height: 80px;
+	  } 
+	.espacio_top{
+		height: 80px;
+	}
+	h1,h2,h3,h4{
+		color:  rgb(47, 44, 125);
+		font-size: medium;
+	}
+	.p{
+		font-size: small;
+	}
+
+	  
+	.esp_objetivo{
+		margin-top: 0px;
+		margin-bottom: 100px;
+	}
+	.esp_hacemos{
+		margin-top: 20px;
+		margin-bottom: 35px;
+	}
+	.esp_aprendes{
+		margin-top: 60px;
+		margin-bottom: 35px;
+	}
+
+
+	.carrusel_galery{
+		width: 45%;
+		
+	}
+	.carrusel_logos{
+		width: 20%;
+		
+	}
+	iframe{
+		width: 400px;
+		height: 1280px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.size_curs{
+		background-color: #ececec;
+		width: auto;
+		height: 780px;
+		border-radius: 50px;
+	}
+
+	.fond_pricing{
+		background-image: url(../img/Fondos/fondo1.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 2500px;
+	}
+
+	.fond_curs{
+		background-image: url(../img/Fondos/fondo2.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 1000px;
+	}
+}
+
+
+/*/ Small devices (landscape phones, 
+less than 768px) 
+// Medium devices (tablets, 768px and up) /*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.logo-brand{
+		width: 120px;
+	  }
+	  .navbar{
+		min-height: 80px;
+	  } 
+	.espacio_top{
+		height: 80px;
+	}
+	h1,h2,h3,h4{
+		color:  rgb(47, 44, 125);
+		font-size: medium;
+	}
+	.p{
+		font-size: small;
+	}
+
+	  
+	.esp_objetivo{
+		margin-top: 0px;
+		margin-bottom: 100px;
+	}
+	.esp_hacemos{
+		margin-top: 20px;
+		margin-bottom: 35px;
+	}
+	.esp_aprendes{
+		margin-top: 60px;
+		margin-bottom: 35px;
+	}
+
+	.carrusel_galery{
+		width: 35%;
+		
+	}
+	.carrusel_logos{
+		width: 20%;
+		
+	}
+
+	iframe{
+		width: 500px;
+		height: 1250px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.size_curs{
+		background-color: #ececec;
+		width: 600px;
+		height: 980px;
+		border-radius: 50px;
+	}
+
+	.fond_pricing{
+		background-image: url(../img/Fondos/fondo1.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 2100px;
+	}
+
+	.fond_curs{
+		background-image: url(../img/Fondos/fondo2.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 1000px;
+	}
+	
+ }
+
+/* Medium devices (tablets, less 
+than 992px) 
+// Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+	.espacio_top{
+		height: 100px;
+	}
+	.logo-brand{
+		width: 160px;
+	}
+	h1,h2,h3,h4{
+		color:  rgb(47, 44, 125);
+		font-size: larger;
+	}
+	.p{
+		font-size: medium;
+	}
+	.esp_objetivo{
+		margin-top: 0px;
+		margin-bottom: 100px;
+	}
+	.esp_hacemos{
+		margin-top: 20px;
+		margin-bottom: 35px;
+	}
+	.esp_aprendes{
+		margin-top: 60px;
+		margin-bottom: 35px;
+	}
+
+
+	.carrusel_galery{
+		width: 35%;
+		
+	}
+	.carrusel_logos{
+		width: 40%;
+		
+	}
+
+	iframe{
+		width: 500px;
+		height: 1250px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.size_curs{
+		background-color: #ececec;
+		width: 600px;
+		height: 910px;
+		border-radius: 50px;
+	}
+
+	.fond_pricing{
+		background-image: url(../img/Fondos/fondo1.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 1000px;
+	}
+
+	.fond_curs{
+		background-image: url(../img/Fondos/fondo2.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 1000px;
+	}
+
+ }
+
+/* Large devices (desktops, less 
+than 1200px) 
+Aplica 1200x800
+1000x700
+900x600
+700x500
+500x500   
+
+width="400" height="1450" 
+
+
+*/
+@media (min-width: 1200px) { 
+	.espacio_top{
+		height: 100px;
+	  }
+	  .logo-brand{
+		width: 160px;
+	  }
+	h1,h2,h3,h4{
+		color:  rgb(47, 44, 125);
+		font-size: larger;
+	}
+	.p{
+		font-size: medium;
+	}
+	.carrusel_galery{
+		width: 30%;
+		
+	}
+	.carrusel_logos{
+		width: 15%;
+		
+	}
+
+	iframe{
+		width: 600px;
+		height: 1230px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.size_curs{
+		background-color: #ececec;
+		width: 600px;
+		height: 1050px;
+		border-radius: 50px;
+	}
+
+
+	.popup{
+        flex-direction: column;
+        height: 100%;
+        max-height: 800px;
+    }
+    
+    .img{
+        width: 100%;
+        height: 40%;
+    }
+    
+    .container-text{
+        width: 100%;
+        height: 60%;
+        padding: 80px;
+	}
+	
+	.fond_pricing{
+		background-image: url(../img/Fondos/fondo1.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 900px;
+	}
+
+	.fond_curs{
+		background-image: url(../img/Fondos/fondo2.webp);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 1000px;
+	}
+
+ }

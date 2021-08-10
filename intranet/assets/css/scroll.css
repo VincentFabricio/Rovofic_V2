@@ -1,0 +1,110 @@
+body {
+    padding: 100px 10% 20px;
+}
+
+.padre {
+    background-color: #fbfbfb;
+    /* IMPORTANTE */
+    border-radius: 0px 0px 11px 11px;
+    -moz-border-radius: 0px 0px 11px 11px;
+    -webkit-border-radius: 0px 0px 11px 11px;
+    border: 1px outset #b0b0b0;
+}
+
+.scroll {
+    height: 510px;
+    width: 800px auto;
+    align-content: center;
+    overflow-x: hidden;
+    overflow-x: auto;
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+}
+
+.imagens {
+    border-radius: 150px
+}
+
+.scroll_2 {
+    height: 300px;
+    width: 520px auto;
+    align-content: center;
+    overflow-x: hidden;
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+    border: 1px solid;
+}
+
+.scroll {
+    background: #f8f8f8;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.scroll::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.scroll::-webkit-scrollbar-button:increment,
+.scroll::-webkit-scrollbar-button {
+    display: none;
+}
+
+.scroll::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #fbfbfb;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.scroll_2 {
+    background: #ffffff;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.scroll_2::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.scroll_2::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.scroll_2::-webkit-scrollbar-button:increment,
+.scroll::-webkit-scrollbar-button {
+    display: none;
+}
+
+.scroll_2::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.scroll_2::-webkit-scrollbar-thumb {
+    background-color: #fbfbfb;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.scroll_2::-webkit-scrollbar-track {
+    border-radius: 10px;
+}

@@ -1,0 +1,282 @@
+body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4{
+	color:  rgb(47, 44, 125);
+}
+p{
+	color: rgb(115, 141, 199);
+}
+
+.navbar{
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  min-height: 100px;
+}
+.nav-link{
+  color:  rgb(47, 44, 125);
+}
+.nav-link:hover{
+  color: rgb(115, 141, 199);
+}
+
+.logo-brand{
+  width: 160px;
+}
+
+.navbar-toggler{
+  font-size: 40px;
+}
+.navbar-toggler:focus{
+  outline:  rgb(47, 44, 125);
+}
+
+
+#carusel{
+  padding-top: 300px;
+}
+
+/*------------------------------------*\
+	ESPACIOS ICONOS IZQ
+\*------------------------------------*/
+
+.esp_objetivo{
+	margin-top: 15px;
+	margin-bottom: 87px;
+}
+.esp_hacemos{
+	margin-top: 20px;
+	margin-bottom: 35px;
+}
+.esp_aprendes{
+	margin-top: 60px;
+	margin-bottom: 35px;
+}
+
+/*------------------------------------*\
+	PORTAFOLIO TEXXTOS
+\*------------------------------------*/
+.portfolio-caption-heading{
+	color: rgb(47, 44, 125);
+}
+.portfolio-caption-subheading{
+	color: rgb(115, 141, 199);
+}
+/*------------------------------------*\
+	About & Why Us (Feature)
+\*------------------------------------*/
+/* -- Feature -- */
+.feature {
+	position:relative;
+}
+
+.feature + .feature  {
+	margin-top:40px;
+}
+
+.feature .feature-icon {
+	position:absolute;
+	left:0;
+	top:0;
+	width:80px;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	border-radius: 50%;
+	font-size:30px;
+	border:1px solid #EBEBEB;
+	color:#2F2C7D;
+}
+
+.feature-content {
+	padding-left:100px;
+}
+
+/* -- About Img -- */
+.about-img {
+	margin-top:40px;
+}
+
+.about-img > img {
+	width:90%;
+}
+
+/* -- About Video -- */
+.about-video {
+	position: relative;
+	display: block;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.about-video > img {
+	width:100%;
+}
+
+.about-video .play-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50% , -50%);
+	    -ms-transform: translate(-50% , -50%);
+	        transform: translate(-50% , -50%);
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	background: #fff;
+	border-radius: 50%;
+	font-size: 24.027px;
+	z-index:10;
+	-webkit-animation : 2s play-animation infinite;
+	        animation : 2s play-animation infinite;
+	-webkit-transition:0.2s color;
+	transition:0.2s color;
+}
+
+.about-video:hover .play-icon {
+	color:#2F2C7D;
+}
+
+@-webkit-keyframes play-animation {
+	from {
+		-webkit-box-shadow : 0px 0px 0px 0px #FFF;
+		        box-shadow : 0px 0px 0px 0px #FFF;
+	}
+	to {
+		-webkit-box-shadow : 0px 0px 0px 10px transparent;
+		        box-shadow : 0px 0px 0px 10px transparent;
+	}
+}
+
+@keyframes play-animation {
+	from {
+		-webkit-box-shadow : 0px 0px 0px 0px #FFF;
+		        box-shadow : 0px 0px 0px 0px #FFF;
+	}
+	to {
+		-webkit-box-shadow : 0px 0px 0px 10px transparent;
+		        box-shadow : 0px 0px 0px 10px transparent;
+	}
+}
+
+.about-video:after {
+	content:"";
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	background-color:#2F2C7D;
+	opacity:0.7;
+}
+
+/*------------------------------------*\
+	Courses
+\*------------------------------------*/
+
+
+/*/ Extra small devices (portrait 
+phones, less than 576px)*/
+@media (max-width: 576px) {
+.logo-brand{
+	width: 120px;
+  }
+  .navbar{
+	min-height: 80px;
+  }
+  h1{
+    font-size: 40px;
+    line-height: normal;
+  }
+  .espacio_top{
+	height: 80px;
+  }
+
+  	.esp_objetivo{
+	margin-top: 0px;
+	margin-bottom: 100px;
+	}
+	.esp_hacemos{
+		margin-top: 20px;
+		margin-bottom: 35px;
+	}
+	.esp_aprendes{
+		margin-top: 60px;
+		margin-bottom: 35px;
+	}
+}
+
+/* Small devices (landscape phones, 
+less than 768px) */
+@media (min-width: 768px) {
+	.logo-brand{
+		width: 120px;
+	  }
+	  .navbar{
+		min-height: 80px;
+	  } 
+	.espacio_top{
+		height: 80px;
+	  }
+	  h1,h2,h3,h4,p{
+		  font-size: medium;
+	  }
+
+	  
+	.esp_objetivo{
+		margin-top: 0px;
+		margin-bottom: 100px;
+	}
+	.esp_hacemos{
+		margin-top: 20px;
+		margin-bottom: 35px;
+	}
+	.esp_aprendes{
+		margin-top: 60px;
+		margin-bottom: 35px;
+	}
+ }
+
+/* Medium devices (tablets, less 
+than 992px) */
+@media (min-width: 992px) { 
+	.espacio_top{
+		height: 100px;
+	  }
+	  .logo-brand{
+		width: 160px;
+	  }
+	  h1,h2,h3,h4,p{
+		font-size: larger;
+	}
+	.esp_objetivo{
+		margin-top: 0px;
+		margin-bottom: 100px;
+	}
+	.esp_hacemos{
+		margin-top: 20px;
+		margin-bottom: 35px;
+	}
+	.esp_aprendes{
+		margin-top: 60px;
+		margin-bottom: 35px;
+	}
+ }
+
+/* Large devices (desktops, less 
+than 1200px) */
+@media (max-width: 1200px) { 
+	.espacio_top{
+		height: 100px;
+	  }
+	  .logo-brand{
+		width: 160px;
+	  }
+	  h1,h2,h3,h4,p{
+		font-size: larger;
+	}
+ }

@@ -1,0 +1,478 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: url(../img/fondo.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: white;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+
+/* Bloque interno box*/
+
+.form-control {
+    font-size: 18px;
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    background-color: #a1b2da;
+    color: white;
+}
+
+
+.form-signin .form-control::placeholder {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+}
+.form-control {
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+}
+
+.form-signin input[type="email"]:hover,
+.form-signin input[type="email"]:active,
+.form-signin input[type="email"]:focus,
+.form-signin input[type="email"]:checked,
+.form-signin input[type="email"]:not(:checked) {
+    background-color: #a1b2da;
+    color: white;
+}
+
+.form-signin input[type="password"] {
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+}
+
+.form-signin input[type="password"]:hover,
+.form-signin input[type="password"]:active,
+.form-signin input[type="password"]:focus,
+.form-signin input[type="password"]:checked {
+    background-color: #a1b2da;
+    color: white;
+}
+
+input#inputEmail {
+    background-image: url(../img/Login/icono_login.webp);
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+input#inputPassword {
+    background-image: url(../img/Login/icono_login2.webp);
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+#login {
+    background-image: url(../img/Login/Login_fondo_1.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 600px;
+}
+
+
+/* Pading fondo login*/
+
+
+/* Width ancho texto login*/
+
+.Log_login {
+    background-image: url(../img/Login/Login_Logo.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 380px auto;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.Log_login2 {
+    background-image: url(../img/Login/Login_Logo.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 380px auto;
+    padding-top: 160px;
+    padding-bottom: 20px;
+}
+
+.login-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: rgb(47, 44, 125);
+}
+
+h1 {
+    font-size: 45px;
+    line-height: normal;
+}
+
+.form-signin {
+    width: 350px;
+    font-size: 18px;
+}
+
+.email_text {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.pass_text {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/*------------------------------------*\
+	Size Screem
+\*------------------------------------*/
+
+
+/*/ Extra small devices (portrait 
+phones, less than 576px)*/
+
+@media (max-width: 576px) {
+    #login {
+        background-image: url(../img/Login/Login_fondo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 500px;
+    }
+
+    .Log_login {
+        background-image: url(../img/Login/Login_Logo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 300px auto;
+        padding-top: 200px;
+        padding-bottom: 70px;
+    }
+    .Log_login2 {
+        background-image: url(../img/Login/Login_Logo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 300px auto;
+        padding-top: 180px;
+        padding-bottom: 5px;
+    }
+
+    .form-signin .checkbox {
+        font-weight: 350;
+    }
+
+    .form-signin .form-control {
+        font-size: 12px;
+    }
+
+    .login-text {
+        padding-top: 0px;
+        padding-bottom: 2px;
+    }
+
+    h1 {
+        font-size: 35px;
+        line-height: normal;
+    }
+
+    .form-signin {
+        width: 280px;
+        font-size: 12px;
+    }
+
+    .email_text {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .pass_text {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+}
+
+
+/* Small devices (landscape phones, 
+less than 768px) */
+
+@media (min-width: 768px) {
+    #login {
+        background-image: url(../img/Login/Login_fondo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 550px;
+    }
+
+    .Log_login {
+        background-image: url(../img/Login/Login_Logo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 320px auto;
+        padding-top: 200px;
+        padding-bottom: 70px;
+    }
+    .Log_login2 {
+        background-image: url(../img/Login/Login_Logo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 320px auto;
+        padding-top: 180px;
+        padding-bottom: 10px;
+    }
+
+    .form-signin .checkbox {
+        font-weight: 350;
+    }
+
+    .form-signin .form-control {
+        font-size: 18px;
+    }
+
+    .login-text {
+        padding-top: 0px;
+        padding-bottom: 2px;
+    }
+
+    h1 {
+        font-size: 35px;
+        line-height: normal;
+    }
+
+    .form-signin {
+        width: 280px;
+        font-size: 18px;
+    }
+
+    .email_text {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .pass_text {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+}
+
+
+/* Medium devices (tablets, less 
+than 992px) */
+
+@media (min-width: 992px) {
+    #login {
+        background-image: url(../img/Login/Login_fondo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 550px;
+    }
+
+    .Log_login {
+        background-image: url(../img/Login/Login_Logo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 320px auto;
+        padding-top: 170px;
+        padding-bottom: 100px;
+    }
+    .Log_login2 {
+        background-image: url(../img/Login/Login_Logo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 320px auto;
+        padding-top: 170px;
+        padding-bottom: 20px;
+    }
+
+    .form-signin .checkbox {
+        font-weight: 350;
+    }
+
+    .form-signin .form-control {
+        font-size: 15px;
+    }
+
+    .login-text {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    h1 {
+        font-size: 42px;
+        line-height: normal;
+    }
+
+    .form-signin {
+        width: 350px;
+        font-size: 18px;
+    }
+
+    .email_text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .pass_text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+
+/* Large devices (desktops, less 
+than 1200px) 
+Aplica 1200x800
+1000x700
+900x600*/
+
+@media (min-width: 1200px) {
+    #login {
+        background-image: url(../img/Login/Login_fondo_sm.webp);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 550px;
+    }
+
+    .Log_login {
+        background-size: 350px auto;
+        padding-top: 170px;
+        padding-bottom: 110px;
+    }
+    .Log_login2 {
+        background-size: 350px auto;
+        padding-top: 170px;
+        padding-bottom: 20px;
+    }
+
+    .form-signin .checkbox {
+        font-weight: 300px;
+    }
+
+    .form-signin .form-control {
+        font-size: 16px;
+    }
+
+    .login-text {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    h1 {
+        font-size: 42px;
+        line-height: normal;
+    }
+
+    .email_text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .pass_text {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+
+
+/*------------------------------------*\
+	Button Login
+\*------------------------------------*/
+
+
+/* Container needed to position the button. 
+Adjust the width as needed */
+
+.container_btn {
+    position: relative;
+    width: 50%;
+}
+
+
+/* Make the image responsive */
+
+.container_btn img {
+    background-image: url(../img/Button/boton1.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 85%;
+    height: auto;
+}
+
+
+/* Style the button and place it in the middle of the container/image */
+
+.container_btn .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container_btn .btn:hover,
+.container_btn .btn:active,
+.container_btn .btn:focus,
+.container_btn .btn.active {
+    width: 100%;
+    height: auto;
+    color: white;
+    background-image: url(../img/Button/boton2.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+a {
+    border-radius: 2px;
+    padding: 10px 7px;
+    text-decoration: none;
+    color: rgb(47, 44, 125);
+    margin: 5px;
+}
