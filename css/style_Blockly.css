@@ -1,0 +1,166 @@
+body {
+    height: 100%;
+    width:100% ;
+
+    background-color: rgb(47, 44, 125);
+    font-family: sans-serif;
+    overflow: hidden;
+  }
+  h1 
+  {
+    /*background-color: hsla(215, 100%, 65%, 1);*/
+    background-color: rgb(255, 255, 255);
+    font-weight: normal;
+    font-size: 100%;
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-top: 10px;
+    height:370px;
+    border-radius: 30px;
+  }
+  h2 {
+    /*background-color: hsla(215, 100%, 65%, 1);*/
+    /*background-color: white;*/
+    
+    font-weight: normal;
+    font-size: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    border-radius: 30px;
+  }
+  h3 {
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+    margin-right:-40px;
+    height:50px;
+  }
+
+  h4 {
+    background-color: white;
+    margin-left: 40px;
+    margin-right: -40px;
+    font-size: 100%;
+    height:50px;
+  }
+
+ Tabs
+  #tabRow>td {
+    
+    border: 1px solid #ccc;
+    
+  }
+  td.tabon {
+    
+    border-bottom-color: #ddd !important;
+    background-color: rgb(47, 44, 125);
+    padding: 8px 30px;
+    border-radius: 20px;
+    color: white;
+  }
+  /*Bloques Block, Arduino y XML - Apagados*/
+  td.taboff {
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 20px;
+    background-color: hsla(215, 100%, 65%, 1);
+    color: white;
+  }
+  /*Cuando pongo el Mouse en Block, Arduino*/
+  td.taboff:hover {
+    /*background-color: silver;*/
+    /*background-color: white;*/  
+    color: black;
+  }
+  td.tabmin {
+    border-top-style: none !important;
+    border-left-style: none !important;
+    border-right-style: none !important;
+  }
+  td.tabmax {
+    border-top-style: none !important;
+    border-left-style: none !important;
+    border-right-style: none !important;
+    width: 100%;
+    text-align: right;
+  }
+/*Tabla de progrmación*/
+  table {
+
+    border-collapse: collapse;
+    margin: 1;
+    padding: 10;
+    border: none;
+  }
+  td {
+    
+    padding: 0;
+    vertical-align: top;
+  }
+  /*Cuando se oprime Bloque Arduino cambia tamaño bloques*/
+  .content {
+    
+    visibility: hidden;
+    margin-left: 40px;
+    margin-right: 10px;
+    padding: 1ex;
+    position: absolute;
+    direction: ltr;
+  }
+  pre.content {
+    
+    overflow: scroll;
+  }
+  /*Tamaño sección de bloques en Blocks*/
+  #content_blocks {
+
+    margin-top: 0px;
+    margin-bottom: 100px;
+
+    padding: 0;
+  }
+  .blocklySvg {
+    
+    border-top: none !important;
+  }
+  #content_xml {
+    resize: none;
+    outline: none;
+    border: none;
+    font-family: monospace;
+    overflow: scroll;
+  }
+  button {
+    padding: 15px 2em;
+    font-size: 100%;
+    border-radius: 15px;
+    border: 1px solid white;
+    background-color:rgb(47, 44, 125);
+    color: white;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+
+  }
+  button.launch {
+    border: 1px solid #d43;
+    background-color: #d43;
+    color: white;
+  }
+  button:active {
+    border: 1px solid blue !important;
+  }
+  /* Cuando se pone el Mouse en los botones */
+button:hover {
+  background-color: hsla(215, 100%, 65%, 1);
+  color: white;
+  } 
+  content_area{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }

@@ -1,0 +1,490 @@
+<html manifest=node.manifest>
+<head>
+  <meta charset="utf-8">
+  <title>ROVOFIC Blockly</title>
+  <link rel="icon" href="img/favicon.ico">
+  <script type="text/javascript" src="blockly_compressed.js"></script>
+  <!--script type="text/javascript" src="../../blockly_uncompressed.js"></script-->
+  <script type="text/javascript" src="blocks_compressed.js"></script>
+  <script type="text/javascript" src="arduino_compressed.js"></script>
+  <script type="text/javascript" src="msg/js/en.js"></script>
+  <script type="text/javascript" src="Blob.js"></script>
+  <script type="text/javascript" src="spin.js"></script>
+  <script type="text/javascript" src="FileSaver.min.js"></script>
+  <script type="text/javascript" src="blockly_helper.js"></script>
+
+  <!--script src="../blockly/blocks/arduino/base.js"></script>
+  <script src="../blockly/generators/arduino/base.js"></script-->
+
+  <!--a href="css/stile.css"></a-->
+  <link type="text/css" rel="stylesheet" href="css/style_Blockly.css"/>
+  
+  <script>
+/**
+ * List of tab names.
+ * @private
+ */
+var TABS_ = ['blocks', 'arduino', 'xml'];
+var selected = 'blocks';
+
+/**
+ * Switch the visible pane when a tab is clicked.
+ * @param {string} clickedName Name of tab clicked.
+ */
+function tabClick(clickedName) {
+  // If the XML tab was open, save and render the content.
+  if (document.getElementById('tab_xml').className == 'tabon') {
+    var xmlTextarea = document.getElementById('content_xml');
+    var xmlText = xmlTextarea.value;
+    var xmlDom = null;
+    try {
+      xmlDom = Blockly.Xml.textToDom(xmlText);
+    } catch (e) {
+      var q =
+          window.confirm('Error parsing XML:\n' + e + '\n\nAbandon changes?');
+      if (!q) {
+        // Leave the user on the XML tab.
+        return;
+      }
+    }
+    if (xmlDom) {
+      Blockly.mainWorkspace.clear();
+      Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
+    }
+  }
+
+  if (document.getElementById('tab_blocks').className == 'tabon') {
+    Blockly.mainWorkspace.setVisible(false);
+  }
+  // Deselect all tabs and hide all panes.
+  for (var i = 0; i < TABS_.length; i++) {
+    var name = TABS_[i];
+    document.getElementById('tab_' + name).className = 'taboff';
+    document.getElementById('content_' + name).style.visibility = 'hidden';
+  }
+
+ // Select the active tab.
+  selected = clickedName;
+  document.getElementById('tab_' + clickedName).className = 'tabon';
+  // Show the selected pane.
+  document.getElementById('content_' + clickedName).style.visibility =
+      'visible';
+  renderContent();
+  if (clickedName == 'blocks') {
+    Blockly.mainWorkspace.setVisible(true);
+  }
+  Blockly.fireUiEvent(window, 'resize');
+}
+
+/**
+ * Populate the currently selected pane with content generated from the blocks.
+ */
+function renderContent() {
+  var content = document.getElementById('content_' + selected);
+  // Initialize the pane.
+  if (content.id == 'content_blocks') {
+    // If the workspace was changed by the XML tab, Firefox will have performed
+    // an incomplete rendering due to Blockly being invisible.  Rerender.
+    Blockly.mainWorkspace.render();
+  } else if (content.id == 'content_xml') {
+    var xmlTextarea = document.getElementById('content_xml');
+    var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+    var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+    xmlTextarea.value = xmlText;
+    xmlTextarea.focus();
+  /*} else if (content.id == 'content_javascript') {
+    content.innerHTML = Blockly.JavaScript.workspaceToCode();
+  } else if (content.id == 'content_dart') {
+    content.innerHTML = Blockly.Dart.workspaceToCode();
+  } else if (content.id == 'content_python') {
+    content.innerHTML = Blockly.Python.workspaceToCode();*/
+  } else if (content.id == 'content_arduino') {
+    //content.innerHTML = Blockly.Arduino.workspaceToCode();
+    var arduinoTextarea = document.getElementById('content_arduino');
+    arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
+    arduinoTextarea.focus();
+  }
+}
+
+/**
+ * Compute the absolute coordinates and dimensions of an HTML element.
+ * @param {!Element} element Element to match.
+ * @return {!Object} Contains height, width, x, and y properties.
+ * @private
+ */
+function getBBox_(element) {
+  var height = element.offsetHeight;
+  var width = element.offsetWidth;
+  var x = 0;
+  var y = 0;
+  do {
+    x += element.offsetLeft;
+    y += element.offsetTop;
+    element = element.offsetParent;
+  } while (element);
+  return {
+    height: height,
+    width: width,
+    x: x,
+    y: y
+  };
+}
+
+/**
+ * Initialize Blockly.  Called on page load.
+ */
+function init() {
+  //window.onbeforeunload = function() {
+  //  return 'Leaving this page will result in the loss of your work.';
+  //};
+  var container = document.getElementById('content_area');
+  var onresize = function(e) {
+    var bBox = getBBox_(container);
+    for (var i = 0; i < TABS_.length; i++) {
+      var el = document.getElementById('content_' + TABS_[i]);
+      el.style.top = bBox.y + 'px';
+      el.style.left = bBox.x + 'px';
+      // Height and width need to be set, read back, then set again to
+      // compensate for scrollbars.
+      el.style.height = bBox.height + 'px';
+      el.style.height = (2 * bBox.height - el.offsetHeight) + 'px';
+      el.style.width = bBox.width + 'px';
+      el.style.width = (2 * bBox.width - el.offsetWidth) + 'px';
+    }
+    // Make the 'Blocks' tab line up with the toolbox.
+    if (Blockly.mainWorkspace.toolbox_.width) {
+      document.getElementById('tab_blocks').style.minWidth =
+          (Blockly.mainWorkspace.toolbox_.width - 38) + 'px';
+          // Account for the 19 pixel margin and on each side.
+    }
+  };
+  window.addEventListener('resize', onresize, false);
+
+  var toolbox = document.getElementById('toolbox');
+  Blockly.inject(document.getElementById('content_blocks'),
+      {grid:
+          {spacing: 25,
+           length: 3,
+           colour: '#ccc',
+           snap: true},
+       media: '../../media/',
+       toolbox: toolbox});
+
+  auto_save_and_restore_blocks();
+
+  //load from url parameter (single param)
+  //http://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
+  var dest = unescape(location.search.replace(/^.*\=/, '')).replace(/\+/g, " ");
+  if(dest){
+    load_by_url(dest);
+  }
+}
+  </script>
+
+  
+
+</head>
+
+<body onload="init()">
+  <table height="100%" width="95%">
+    <tr>
+      <td>
+          <h2>
+              &nbsp;
+            <center>
+                <a class="logo" href="https://rovofic.com/">
+                  <img src="./img/logo-alt.png" height="85" width="200">
+                </a>
+
+            </center>
+
+            &nbsp;
+            <center>
+                <button id=buttonSave type="button" onclick="uploadClick()">Upload</button>
+                <button type="button" onclick="resetClick()">Reset</button>
+                <button onclick="discard()">Discard</button>
+                <button onclick="saveCode()">Save in Arduino</button>
+                <button onclick="save()">Save</button>
+                <button id="fakeload">Open</button>
+                <input type="file" id="load" style="display: none;"/>
+                <!--button class="launch" onclick="runJS()">Run Program</button-->
+              </center>
+              &nbsp;
+          </h2>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        <h3>
+          
+          <table width="40%">
+            <tr id="tabRow" height="1em">
+              <td id="tab_blocks" class="tabon" onclick="tabClick('blocks')">Blocks</td>
+              <td class="tabmin">&nbsp;</td>
+              <!--td id="tab_javascript" class="taboff" onclick="tabClick(this.id)">JavaScript</td>
+              <td class="tabmin">&nbsp;</td-->
+              <!--td id="tab_dart" class="taboff" onclick="tabClick(this.id)">Dart</td>
+              <td class="tabmin">&nbsp;</td>
+              <td id="tab_python" class="taboff" onclick="tabClick(this.id)">Python</td>
+              <td class="tabmin">&nbsp;</td-->
+              <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')">Arduino</td>
+              <td class="tabmin">&nbsp;</td>
+              <td id="tab_xml" class="taboff" onclick="tabClick('xml')">XML</td>
+              </tr>
+            </table>
+            
+            <tr>
+              <td height="100%" id="content_area"></td>
+              </tr>
+
+       </h3> 
+
+       <!--td>
+          <h4>
+  
+          </h4>
+        </td-->
+
+      </td>
+
+    </tr>
+
+
+  </table>
+  <div id="content_blocks" class="content"></div>
+  <textarea id="content_arduino" class="content" readonly wrap="off"></textarea>
+  <textarea id="content_xml" class="content" wrap="off"></textarea>
+
+  <xml id="toolbox" style="display: none">
+
+    <category name="STAR / END">
+      <block type="base_delay_init"></block>
+      <block type="base_delay_fin"></block>
+    </category>
+
+    <sep></sep>
+
+    <category name="Operators">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="logic_comparee"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_booleann"></block>
+    </category>
+
+    <sep></sep>
+    
+    <category name="Variables" custom="VARIABLE"></category>
+
+    <sep></sep>
+    
+    <category name="Control">
+        <block type="controls_if"></block>
+        <block type="controls_for">
+            <value name="FROM">
+            <block type="math_number">
+                <field name="NUM">1</field>
+            </block>
+            </value>
+            <value name="TO">
+            <block type="math_number">
+                <field name="NUM">10</field>
+            </block>
+            </value>
+        </block>
+
+      <block type="controls_whileUntil"></block>
+      <block type="logic_boolean"></block>
+    </category>
+    
+
+    <sep></sep>
+    <category name="Functions" custom="PROCEDURE">
+      
+    </category>
+    
+    <sep></sep>
+
+    <category name="Input/Output" color=2090551>
+        <category name="Digital">
+          <block type="inout_highlow"></block>
+          <block type="inout_digital_write"></block>
+          <block type="inout_digital_read"></block>
+          <block type="inout_buildin_led"></block>
+          <block type="aarduino_setup"></block>
+          <block type="base_delay_init"></block>
+          <block type="base_delay_fin"></block>
+    
+        </category>
+    
+    
+          <category name="Analogic">
+          <block type="inout_analog_write">
+            <value name="NUM">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+          <block type="inout_analog_read"></block>
+        </category>
+    
+    
+          <category name="Tone">
+                <block type="advanced_tone">
+                    <value name="NUM">
+                        <block type="math_number">
+                            <field name="NUM">440</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="advanced_tonedure">
+                    <value name="NUM">
+                        <block type="math_number">
+                            <field name="NUM">440</field>
+                        </block>
+                    </value>
+                    <value name="DUR">
+                        <block type="math_number">
+                            <field name="NUM">1000</field>
+                        </block>
+                    </value>
+                </block>
+                <block type="advanced_notone"></block>
+        
+        </category>
+    
+        <category name="Servo">
+          <block type="servo_move">
+            <value name="DEGREE">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+          <block type="servo_read_degrees"></block>
+        </category>
+    
+    
+    </category>
+
+    <sep></sep>
+
+    <category name="ROVOFIC">
+
+      <block type="rovofic_motor_shield_m">
+          <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+      </block>
+      <block type="rovofic_motor_shield_m">
+          <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">-255</field>
+              </block>
+            </value>
+      </block>
+      <block type="rovofic_motor_motion">
+        <value name="SPEED">
+            <block type="math_number">
+              <field name="NUM">255</field>
+            </block>
+          </value>
+      </block>
+      <block type="rovofic_motor_motion">
+          <value name="SPEED">
+              <block type="math_number">
+                <field name="NUM">-255</field>
+              </block>
+            </value>
+      </block>
+
+    </category>
+
+      <sep></sep>
+
+      <category name="Serial/Serial 1">
+
+        <category name="Serial">
+          <block type="serial_print">
+            <value name="CONTENT">
+              <block type="text">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+      
+          <block type="serial_printlnn">
+              <value name="CONTENT">
+                <block type="text">
+                  <field name="TEXT"></field>
+                </block>
+              </value>
+          </block>
+      
+          <block type="serial_readd"></block>
+      
+          <block type="serial_available"></block>
+        </category>
+      
+          <category name="Serial 1">
+              <block type="serial1_print">
+                  <value name="CONTENT">
+                    <block type="text">
+                      <field name="TEXT"></field>
+                    </block>
+                  </value>
+                </block>
+             
+            <block type="serial1_printlnn">
+              <value name="CONTENT">
+                <block type="text">
+                  <field name="TEXT"></field>
+                </block>
+              </value>
+            </block>
+      
+            <block type="serial1_readd">
+              </block>
+          </category>
+      
+      </category>
+
+
+      <sep></sep>
+      <category name="TIME">
+  
+          <block type="base_delay">
+              <value name="DELAY_TIME">
+                <block type="math_number">
+                  <field name="NUM">100</field>
+                </block>
+              </value>
+          </block>
+  
+          <block type="base_delay">
+              <value name="DELAY_TIME">
+                <block type="math_number">
+                  <field name="NUM">500</field>
+                </block>
+              </value>
+          </block>  
+  
+        <block type="base_delay">
+          <value name="DELAY_TIME">
+            <block type="math_number">
+              <field name="NUM">1000</field>
+            </block>
+          </value>
+        </block>
+        
+      </category>
+      <sep></sep>
+</xml>
+
+</body>
+</html>
