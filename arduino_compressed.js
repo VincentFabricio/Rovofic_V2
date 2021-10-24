@@ -26,7 +26,20 @@ Blockly.Arduino.scrubNakedValue=function(a){return a+";\n"};Blockly.Arduino.quot
 Blockly.Arduino.scrub_=function(a,b){if(null===b)return"";var c="";if(!a.outputConnection||!a.outputConnection.targetConnection){var d=a.getCommentText();d&&(c+=Blockly.Arduino.prefixLines(d,"// ")+"\n");for(var e=0;e<a.inputList.length;e++)a.inputList[e].type==Blockly.INPUT_VALUE&&(d=a.inputList[e].connection.targetBlock())&&(d=Blockly.Arduino.allNestedComments(d))&&(c+=Blockly.Arduino.prefixLines(d,"// "))}e=a.nextConnection&&a.nextConnection.targetBlock();e=Blockly.Arduino.blockToCode(e);return c+
 b+e};Blockly.Arduino.base={};Blockly.Arduino.base_delay=function(){return"delay("+(Blockly.Arduino.valueToCode(this,"DELAY_TIME",Blockly.Arduino.ORDER_ATOMIC)||"1000")+");\n"};Blockly.Arduino.base_delay_init=function(){return"delay(1000);\n"};Blockly.Arduino.base_delay_fin=function(){return"delay(1200000);\n"};
 Blockly.Arduino.base_map=function(){var a=Blockly.Arduino.valueToCode(this,"NUM",Blockly.Arduino.ORDER_NONE),b=Blockly.Arduino.valueToCode(this,"DMAX",Blockly.Arduino.ORDER_ATOMIC);return["map("+a+", 0, 1024, 0, "+b+")",Blockly.Arduino.ORDER_NONE]};Blockly.Arduino.inout_buildin_led=function(){var a=this.getFieldValue("STAT");Blockly.Arduino.setups_.setup_output_13="pinMode(13, OUTPUT);";return"digitalWrite(13, "+a+");\n"};
-Blockly.Arduino.inout_digital_write=function(){var a=this.getFieldValue("PIN"),b=this.getFieldValue("STAT");Blockly.Arduino.setups_["setup_output_"+a]="pinMode("+a+", OUTPUT);";return"digitalWrite("+a+", "+b+");\n"};Blockly.Arduino.inout_digital_read=function(){var a=this.getFieldValue("PIN");Blockly.Arduino.setups_["setup_input_"+a]="pinMode("+a+", INPUT);";return["digitalRead("+a+")",Blockly.Arduino.ORDER_ATOMIC]};
+Blockly.Arduino.inout_digital_write=function(){var a=this.getFieldValue("PIN"),b=this.getFieldValue("STAT");Blockly.Arduino.setups_["setup_output_"+a]="pinMode("+a+", OUTPUT);";return"digitalWrite("+a+", "+b+");\n"};
+
+Blockly.Arduino.inout_digital_read=function(){
+    var a=this.getFieldValue("PIN");
+    Blockly.Arduino.setups_["setup_input_"+a]="pinMode("+a+", INPUT);";
+    return["digitalRead("+a+")",Blockly.Arduino.ORDER_ATOMIC]
+};
+
+Blockly.Arduino.inout_digital_read_PULL_UP=function(){
+    var a=this.getFieldValue("PIN");
+    Blockly.Arduino.setups_["setup_input_"+a]="pinMode("+a+", INPUT_PULLUP);";
+    return["digitalRead("+a+")",Blockly.Arduino.ORDER_ATOMIC]
+};
+
 Blockly.Arduino.inout_analog_write=function(){var a=this.getFieldValue("PIN"),b=Blockly.Arduino.valueToCode(this,"NUM",Blockly.Arduino.ORDER_ATOMIC);return"analogWrite("+a+", "+b+");\n"};Blockly.Arduino.inout_analog_read=function(){return["analogRead("+this.getFieldValue("PIN")+")",Blockly.Arduino.ORDER_ATOMIC]};
 Blockly.Arduino.inout_tone=function(){var a=this.getFieldValue("PIN"),b=Blockly.Arduino.valueToCode(this,"NUM",Blockly.Arduino.ORDER_ATOMIC);Blockly.Arduino.setups_["setup_output"+a]="pinMode("+a+", OUTPUT);";return"tone("+a+", "+b+");\n"};Blockly.Arduino.inout_notone=function(){var a=this.getFieldValue("PIN");Blockly.Arduino.setups_["setup_output"+a]="pinMode("+a+", OUTPUT);";return"noTone("+a+");\n"};
 Blockly.Arduino.inout_highlow=function(){return["HIGH"==this.getFieldValue("BOOL")?"HIGH":"LOW",Blockly.Arduino.ORDER_ATOMIC]};

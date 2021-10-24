@@ -25,7 +25,20 @@ Blockly.Blocks.base_delay_init={helpUrl:"http://arduino.cc/en/Reference/delay",i
 Blockly.Blocks.base_map={helpUrl:"http://arduino.cc/en/Reference/map",init:function(){this.setColour(230);this.appendValueInput("NUM","Number").appendField("Map ").setCheck("Number");this.appendValueInput("DMAX","Number").appendField("value to [0-").setCheck("Number");this.appendDummyInput().appendField("]");this.setInputsInline(!0);this.setOutput(!0);this.setTooltip("Re-maps a number from [0-1024] to another.")}};
 Blockly.Blocks.inout_buildin_led={helpUrl:"http://arduino.cc/en/Reference/DigitalWrite",init:function(){this.setColour(190);this.appendDummyInput().appendField("Build-in LED Stat").appendField(new Blockly.FieldDropdown([["HIGH","HIGH"],["LOW","LOW"]]),"STAT");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("light or off the build-in LED")}};
 Blockly.Blocks.inout_digital_write={helpUrl:"http://arduino.cc/en/Reference/DigitalWrite",init:function(){this.setColour(220);this.appendDummyInput().appendField("DigitalWrite PIN#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN").appendField("Stat").appendField(new Blockly.FieldDropdown([["HIGH","HIGH"],["LOW","LOW"]]),"STAT");this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("Write digital value to a specific Port")}};
-Blockly.Blocks.inout_digital_read={helpUrl:"http://arduino.cc/en/Reference/DigitalRead",init:function(){this.setColour(220);this.appendDummyInput().appendField("DigitalRead PIN#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.setOutput(!0,"Boolean");this.setTooltip("")}};
+Blockly.Blocks.inout_digital_read={helpUrl:"http://arduino.cc/en/Reference/DigitalRead",
+  init:function(){
+    this.setColour(200);
+    this.appendDummyInput().appendField("DigitalRead PIN#").
+    appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");
+    this.setOutput(!0,"Boolean");this.setTooltip("")}
+  };
+  Blockly.Blocks.inout_digital_read_PULL_UP={helpUrl:"http://arduino.cc/en/Reference/DigitalRead",
+  init:function(){
+    this.setColour(240);
+    this.appendDummyInput().appendField("DigitalRead Pull_Up PIN#").
+    appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");
+    this.setOutput(!0,"Boolean");this.setTooltip("")}
+  };
 Blockly.Blocks.inout_analog_write={helpUrl:"http://arduino.cc/en/Reference/AnalogWrite",init:function(){this.setColour(245);this.appendDummyInput().appendField("AnalogWrite PIN#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.appendValueInput("NUM","Number").appendField("value").setCheck("Number");this.setInputsInline(!0);this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("Write analog value between 0 and 255 to a specific Port")}};
 Blockly.Blocks.inout_analog_read={helpUrl:"http://arduino.cc/en/Reference/AnalogRead",init:function(){this.setColour(245);this.appendDummyInput().appendField("AnalogRead PIN#").appendField(new Blockly.FieldDropdown(profile["default"].analog),"PIN");this.setOutput(!0,"Number");this.setTooltip("Return value between 0 and 1024")}};
 Blockly.Blocks.inout_tone={helpUrl:"http://www.arduino.cc/en/Reference/Tone",init:function(){this.setColour(230);this.appendDummyInput().appendField("Tone PIN#").appendField(new Blockly.FieldDropdown(profile["default"].digital),"PIN");this.appendValueInput("NUM","Number").appendField("frequency").setCheck("Number");this.setInputsInline(!0);this.setPreviousStatement(!0,null);this.setNextStatement(!0,null);this.setTooltip("Generate audio tones on a pin")}};
